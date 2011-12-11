@@ -1,0 +1,83 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+function drawSquare(){
+    var a_canvas = document.getElementById("myCanvas");
+    var a_context = a_canvas.getContext("2d");
+    a_context.fillRect(30, 30, 150, 150);
+}
+function drawBorderAndSquare(){
+    var a_canvas = document.getElementById("myCanvas");
+    var a_context = a_canvas.getContext("2d");
+    a_context.strokeRect(0, 0, 980, 400);
+    a_context.fillRect(20, 20, 940, 360);
+}
+function clearCanvas(){
+    var a_canvas = document.getElementById("myCanvas");
+    var a_context = a_canvas.getContext("2d");
+    
+    a_context.fillStyle = "#858585";
+}
+function drawDirection(){
+    var a_canvas = document.getElementById("myCanvas");
+    var a_context = a_canvas.getContext("2d");
+    var a_direction = document.getElementById("ask_direction");
+    switch(a_direction.value){
+	case "stop":
+	    a_context.fillStyle = "#000000";
+	    break;
+	case "inainte":
+	    a_context.fillStyle = "#a8a8a8";
+	    break;
+	case "inapoi":
+	    a_context.fillStyle = "#747170";
+	    break;
+	case "stanga":
+	    a_context.fillStyle = "#d8d8d8";
+	    break;
+	case "dreapta":
+	    a_context.fillStyle = "#949494";
+	    break;
+	case "idle":
+	    a_context.fillStyle = "#ffffff";
+	    break;
+    }
+    a_context.fillRect(20, 20, 940, 360);
+}
+function drawClearSquare(){
+    var a_canvas = document.getElementById("myCanvas");
+    var a_hid = document.getElementById("hid");
+    var a_context = a_canvas.getContext("2d");
+    if(a_hid.value == "hid"){
+	a_context.clearRect(40, 40, 900, 320);
+	a_hid.value = "";
+    }else{
+	a_context.fillRect(20, 20, 940, 360);
+	a_hid.value = "hid";
+    }
+}
+function updateDirection(){
+    $.post("calibrare.pl", {ask_direction:"a"}, function(data){ $("#ask_direction").val(data.read_direction);drawDirection();}, "json"); 
+    setTimeout('updateDirection()', 500);
+}
+$(document).ready(function(){updateDirection();});
+</script>
+</head>
+<body>
+<input type="hidden" id="ask_direction" value="stop">
+<canvas id="myCanvas" width="1000" height="400" onclick="drawDirection();return false">
+Incompatible browser!
+</canvas>
+<script language = "JAVASCRIPT">
+document.onload = drawBorderAndSquare();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

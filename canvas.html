@@ -1,0 +1,38 @@
+<html>
+<head>
+<script language="JAVASCRIPT">
+function drawSquare(){
+    var a_canvas = document.getElementById("myCanvas");
+    var a_context = a_canvas.getContext("2d");
+    a_context.fillRect(30, 30, 150, 150);
+}
+function drawBorderAndSquare(){
+    var a_canvas = document.getElementById("myCanvas");
+    var a_context = a_canvas.getContext("2d");
+    a_context.strokeRect(0, 0, 980, 400);
+    a_context.fillRect(20, 20, 940, 360);
+}
+function drawClearSquare(){
+    var a_canvas = document.getElementById("myCanvas");
+    var a_hid = document.getElementById("hid");
+    var a_context = a_canvas.getContext("2d");
+    if(a_hid.value == "hid"){
+	a_context.clearRect(40, 40, 900, 320);
+	a_hid.value = "";
+    }else{
+	a_context.fillRect(20, 20, 940, 360);
+	a_hid.value = "hid";
+    }
+}
+</script>
+</head>
+<body>
+<input type="hidden" id="hid" value="hid">
+<canvas id="myCanvas" width="1000" height="400" onclick="drawClearSquare();return false">
+Incompatible browser!
+</canvas>
+<script language = "JAVASCRIPT">
+document.onload = drawBorderAndSquare();
+</script>
+</body>
+</html>
