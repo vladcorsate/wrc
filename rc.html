@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Test canvas for RemoteControl</title>
+<script type="text/javascript" src=js/jquery-1.6.1.min.js></script>
+<script type="text/javascript">
+function displayCanvas(){
+    var x= 120;
+    var y = 120;
+
+    var canvas1 = document.getElementById("canvas1");
+    var canvas2 = document.getElementById("canvas2");
+    var canvas3 = document.getElementById("canvas3");
+    var canvas4 = document.getElementById("canvas4");
+    var canvas5 = document.getElementById("canvas5");
+    var canvas6 = document.getElementById("canvas6");
+    var canvas7 = document.getElementById("canvas7");
+    var canvas8 = document.getElementById("canvas8");
+    var canvas9 = document.getElementById("canvas9");
+    
+    var ctx1 = canvas1.getContext("2d");
+    var ctx2 = canvas2.getContext("2d");
+    var ctx3 = canvas3.getContext("2d");
+    var ctx4 = canvas4.getContext("2d");
+    var ctx5 = canvas5.getContext("2d");
+    var ctx6 = canvas6.getContext("2d");
+    var ctx7 = canvas7.getContext("2d");
+    var ctx8 = canvas8.getContext("2d");
+    var ctx9 = canvas9.getContext("2d");
+    
+    ctx1.fillStyle="rgb(255,255,255)";
+    ctx1.fillRect(0, 0, x, y);
+    
+    ctx2.fillStyle="rgb(200,0,0)";
+    ctx2.fillRect(0, 0, x, y);
+    //ctx2.fillStyle="rgb(0,0,0)";
+    //ctx2.font="italic 30px serif";
+    //ctx2.fillText("^", 22, 40);
+    
+    
+    ctx3.fillStyle="rgb(255, 255, 255)";
+    ctx3.fillRect(0, 0, x, y);
+    
+    ctx4.fillStyle="rgb(200,0,0)";
+    ctx4.fillRect(0, 0, x, y);
+    
+    ctx5.fillStyle="rgb(121,20,0)";
+    ctx5.fillRect(0, 0, x, y);
+    
+    ctx6.fillStyle="rgb(200,0,0)";
+    ctx6.fillRect(0, 0, x, y);
+    
+    ctx7.fillStyle="rgb(255, 255, 255)";
+    ctx7.fillRect(0, 0, x, y);
+    
+    ctx8.fillStyle="rgb(200,0,0)";
+    ctx8.fillRect(0, 0, x, y);
+    
+    ctx9.fillStyle="rgb(255, 255, 255)";
+    ctx9.fillRect(0, 0, x, y);
+}
+
+function sendDirection(direction){
+    $.post("server.pl", {direction:direction}, function(data){}, "json");
+} 
+</script>
+</head>
+<body onLoad="displayCanvas();">
+
+<canvas id="canvas1" width=120 height=120>aaa</canvas>
+<canvas id="canvas2" width=120 height=120 onclick="sendDirection('inainte');">aaa</canvas>
+<canvas id="canvas3" width=120 height=120>aaa</canvas>
+<br/>
+<canvas id="canvas4" width=120 height=120 onclick="sendDirection('stanga');">aaa</canvas>
+<canvas id="canvas5" width=120 height=120 onclick="sendDirection('stop');">aaa</canvas>
+<canvas id="canvas6" width=120 height=120 onclick="sendDirection('dreapta');">aaa</canvas>
+<br/>
+<canvas id="canvas7" width=120 height=120>aaa</canvas>
+<canvas id="canvas8" width=120 height=120 onclick="sendDirection('inapoi');">aaa</canvas>
+<canvas id="canvas9" width=120 height=120>aaa</canvas>
+
+</body>
