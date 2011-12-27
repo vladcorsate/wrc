@@ -27,7 +27,7 @@ function displayCanvas(){
     var ctx8 = canvas8.getContext("2d");
     var ctx9 = canvas9.getContext("2d");
     
-    ctx1.fillStyle="rgb(255,255,255)";
+    ctx1.fillStyle="rgb(100, 0, 0)";
     ctx1.fillRect(0, 0, x, y);
     
     ctx2.fillStyle="rgb(200,0,0)";
@@ -49,13 +49,13 @@ function displayCanvas(){
     ctx6.fillStyle="rgb(200,0,0)";
     ctx6.fillRect(0, 0, x, y);
     
-    ctx7.fillStyle="rgb(255, 255, 255)";
+    ctx7.fillStyle="rgb(100, 0, 0)";
     ctx7.fillRect(0, 0, x, y);
     
     ctx8.fillStyle="rgb(200,0,0)";
     ctx8.fillRect(0, 0, x, y);
     
-    ctx9.fillStyle="rgb(255, 255, 255)";
+    ctx9.fillStyle="rgb(100, 0, 0)";
     ctx9.fillRect(0, 0, x, y);
 }
 
@@ -66,7 +66,7 @@ function sendDirection(direction){
 </head>
 <body onLoad="displayCanvas();">
 
-<canvas id="canvas1" width=120 height=120>aaa</canvas>
+<canvas id="canvas1" width=120 height=120 onclick="sendDirection('rotate');">aaa</canvas>
 <canvas id="canvas2" width=120 height=120 onclick="sendDirection('inainte');">aaa</canvas>
 <canvas id="canvas3" width=120 height=120>aaa</canvas>
 <br/>
@@ -74,8 +74,8 @@ function sendDirection(direction){
 <canvas id="canvas5" width=120 height=120 onclick="sendDirection('stop');">aaa</canvas>
 <canvas id="canvas6" width=120 height=120 onclick="sendDirection('dreapta');">aaa</canvas>
 <br/>
-<canvas id="canvas7" width=120 height=120>aaa</canvas>
+<canvas id="canvas7" width=120 height=120 onclick="sendDirection('acc');">aaa</canvas>
 <canvas id="canvas8" width=120 height=120 onclick="sendDirection('inapoi');">aaa</canvas>
-<canvas id="canvas9" width=120 height=120>aaa</canvas>
+<canvas id="canvas9" width=120 height=120 onclick="sendDirection('deacc');">aaa</canvas>
 
 </body>
