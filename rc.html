@@ -4,7 +4,7 @@
 <script type="text/javascript" src=js/jquery-1.6.1.min.js></script>
 <script type="text/javascript">
 function displayCanvas(){
-    var x= 120;
+    var x= 180;
     var y = 120;
 
     var canvas1 = document.getElementById("canvas1");
@@ -49,13 +49,13 @@ function displayCanvas(){
     ctx6.fillStyle="rgb(200,0,0)";
     ctx6.fillRect(0, 0, x, y);
     
-    ctx7.fillStyle="rgb(100, 0, 0)";
+    ctx7.fillStyle="rgb(255, 255, 255)";
     ctx7.fillRect(0, 0, x, y);
     
     ctx8.fillStyle="rgb(200,0,0)";
     ctx8.fillRect(0, 0, x, y);
     
-    ctx9.fillStyle="rgb(100, 0, 0)";
+    ctx9.fillStyle="rgb(255, 255, 255)";
     ctx9.fillRect(0, 0, x, y);
 }
 
@@ -66,16 +66,18 @@ function sendDirection(direction){
 </head>
 <body onLoad="displayCanvas();">
 
-<canvas id="canvas1" width=120 height=120 onclick="sendDirection('rotate');">aaa</canvas>
-<canvas id="canvas2" width=120 height=120 onclick="sendDirection('inainte');">aaa</canvas>
-<canvas id="canvas3" width=120 height=120>aaa</canvas>
+<canvas id="canvas1" width=180 height=120 onclick="sendDirection('rotate');">aaa</canvas>
+<canvas id="canvas2" width=180 height=120 onclick="sendDirection('inainte');">aaa</canvas>
+<canvas id="canvas3" width=180 height=120>aaa</canvas>
 <br/>
-<canvas id="canvas4" width=120 height=120 onclick="sendDirection('stanga');">aaa</canvas>
-<canvas id="canvas5" width=120 height=120 onclick="sendDirection('stop');">aaa</canvas>
-<canvas id="canvas6" width=120 height=120 onclick="sendDirection('dreapta');">aaa</canvas>
+<canvas id="canvas4" width=180 height=120 onclick="sendDirection('stanga');">aaa</canvas>
+<canvas id="canvas5" width=180 height=120 onclick="sendDirection('stop');">aaa</canvas>
+<canvas id="canvas6" width=180 height=120 onclick="sendDirection('dreapta');">aaa</canvas>
 <br/>
-<canvas id="canvas7" width=120 height=120 onclick="sendDirection('acc');">aaa</canvas>
-<canvas id="canvas8" width=120 height=120 onclick="sendDirection('inapoi');">aaa</canvas>
-<canvas id="canvas9" width=120 height=120 onclick="sendDirection('deacc');">aaa</canvas>
+<!--<canvas id="canvas7" width=120 height=120 onclick="sendDirection('acc');">aaa</canvas>-->
+<canvas id="canvas7" width=180 height=120>aaa</canvas>
+<canvas id="canvas8" width=180 height=120 onclick="sendDirection('inapoi');">aaa</canvas>
+<!--<canvas id="canvas9" width=120 height=120 onclick="sendDirection('deacc');">aaa</canvas>-->
+<canvas id="canvas9" width=180 height=120>aaa</canvas>
 
 </body>
